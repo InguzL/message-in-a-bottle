@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message in a Bottle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            color: #fff;
+            padding: 10%;
+        }
+        .container {
+            max-width: 1920px;
+            max-height: 1080px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+        }
+        label, input, textarea, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #9e560e; /* Light orange button color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Message in a Bottle</h1>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <textarea placeholder="Write your letter out here..." id="message" name="message" required></textarea>
+
+        <label for="file">Upload a PDF or Word document instead:</label>
+        <input type="file" id="file" name="file" accept=".pdf,.doc,.docx">
+
+        <button type="submit">Send</button>
+    </div>
+
+    <script>
+        const textarea = document.querySelector("textarea");
+        textarea.addEventListener("keyup", e =>{
+            let scHeight = e.target.scrollHeight;
+            textarea.style.height = "${scHeight}px";
+        });
+    </script>
+</body>
+</html>
